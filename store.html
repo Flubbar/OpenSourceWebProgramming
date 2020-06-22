@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <title>Introduction</title>
+
+
+  <style>
+    @FONT-FACE {
+      font-family: 'cfont';
+      src: url("cafefont.ttf");
+    }
+
+    body {
+      font-family: cfont;
+    }
+
+    .IntroBody {
+      background-color: #FFF2E6;
+    }
+
+    .IntroBody .Contents {
+      background: rgb(30, 39, 46);
+      /* Fallback for older browsers without RGBA-support */
+      background: rgba(30, 39, 46, 0.9);
+      height: 100%;
+      width: 100%-120px;
+      margin-left: 0px;
+      padding: 30px 30px 30px 30px;
+      color: white;
+      min-width: 800px;
+    }
+
+    .IntroBody .Contents .ImgBox h1 {
+      font-size: 80px;
+      margin: 4px;
+      display: float;
+      float: bottom;
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      background-color: rgba(255, 255, 255, 0.24);
+    }
+
+    .IntroBody .Contents .ImgBox p {
+      font-size: 15px;
+      margin: 4px;
+      display: float;
+      float: bottom;
+      position: absolute;
+      bottom: 10px;
+      right: 35px;
+      background-color: rgba(255, 255, 255, 0.24);
+    }
+
+    .IntroBody .Contents .ImgBox {
+      position: relative;
+      width: 100%;
+      height: 750px;
+      background: url(img/imax2.jpg) no-repeat center center fixed;
+      filter: alpha(opacity=70);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    #AboutUsImg {
+      height: 550px;
+      background: url(img/front.jpg) no-repeat center center fixed;
+      filter: alpha(opacity=70);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    #AboutUsBox {
+      height: 1000px;
+      background-color: #485460;
+      width: 100%;
+      text-align: left;
+      font-size: 28px;
+      padding-top: 20px;
+      padding-left: 20px;
+    }
+
+    #AboutUsBox h2 {
+      padding-top: 20px;
+      font-size: 65px;
+    }
+
+    .navbar {
+      margin-top: 0px;
+      background-color: #F2E3D5;
+      color: #734C29;
+    }
+
+    li {
+      padding-right: 30px;
+    }
+
+    table {
+      border-top: 1px solid #444444;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid #444444;
+      padding: 10px;
+    }
+
+    #ttable {
+      font-size: 30px;
+      float: right;
+      display: inline;
+      position: static;
+      margin-right: 80px;
+      margin-top: 30px;
+    }
+
+    #map {
+      color: #000000;
+    }
+  </style>
+</head>
+
+<body class="IntroBody">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- The navigation menu -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div><img src="img/llogo.png" style="float:left; display:inline; margin-left:30px;margin-top:7px;margin-bottom:7px;"></div>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right" style="margin-right: 20px; font-size:22px;">
+        <li><a href="Intro.html">Intoduction</a></li>
+        <li><a href="Howtouse.html">How To Use</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="foodconsumption.html">Trends</a></li>
+        <li><a href="Coffee_Ingredient.html">Contents Info</a></li>
+        <li><a href="Random.html">Random</a></li>
+      </ul>
+  </nav>
+
+
+
+  <div class="Contents">
+
+    <div class="ImgBox" id="AboutUsImg">
+      <h1>Store</h1><br>
+      <p>Distribution by region</p>
+    </div><br>
+    <div class="SelectBox" Id="AboutUsBox">
+      <h2>Distribution</h2>
+
+      <div id="map" style="width:900px; height: 600px"></div>
+
+      <script>
+        function myMap() {
+          var mapCanvas = document.getElementById("map");
+          var place1 = new google.maps.LatLng(37.951594, 128.296130);
+          var place2 = new google.maps.LatLng(35.811904, 128.775514);
+          var place3 = new google.maps.LatLng(35.200400, 126.853332);
+          var place4 = new google.maps.LatLng(36.333186, 127.489009);
+          var place5 = new google.maps.LatLng(37.472141, 127.004548);
+
+          var standard = new google.maps.LatLng(36.584017, 128.061509);
+          var mapOptions = {
+            center: standard,
+            zoom: 7
+          };
+          var map = new google.maps.Map(mapCanvas, mapOptions);
+
+          var marker = new google.maps.Marker({
+            position: place1,
+            icon: 'cicon.png',
+            animation: google.maps.Animation.BOUNCE
+          });
+          marker.setMap(map);
+          var mySpot = new google.maps.Circle({
+            center: place1,
+            radius: 40000,
+            strokeColor: "#1993A8",
+            strokeOpacity: 0.7,
+            strokeWeight: 3,
+            fillColor: "#1993A8",
+            fillOpacity: 0.5
+          });
+          mySpot.setMap(map);
+
+          var marker2 = new google.maps.Marker({
+            position: place2,
+            icon: 'cicon.png',
+            animation: google.maps.Animation.BOUNCE
+          });
+          marker2.setMap(map);
+          var mySpot = new google.maps.Circle({
+            center: place2,
+            radius: 55000,
+            strokeColor: "#41FF3A",
+            strokeOpacity: 0.7,
+            strokeWeight: 3,
+            fillColor: "#41FF3A",
+            fillOpacity: 0.3
+          });
+          mySpot.setMap(map);
+
+
+          var marker3 = new google.maps.Marker({
+            position: place3,
+            icon: 'cicon.png',
+            animation: google.maps.Animation.BOUNCE
+          });
+          marker3.setMap(map);
+          var mySpot = new google.maps.Circle({
+            center: place3,
+            radius: 50000,
+            strokeColor: "#7112FF",
+            strokeOpacity: 0.7,
+            strokeWeight: 3,
+            fillColor: "#7112FF",
+            fillOpacity: 0.3
+          });
+          mySpot.setMap(map);
+
+
+
+          var marker4 = new google.maps.Marker({
+            position: place4,
+            icon: 'cicon.png',
+            animation: google.maps.Animation.BOUNCE
+          });
+          marker4.setMap(map);
+          var mySpot = new google.maps.Circle({
+            center: place4,
+            radius: 65000,
+            strokeColor: "#1312FF",
+            strokeOpacity: 0.7,
+            strokeWeight: 3,
+            fillColor: "#1312FF",
+            fillOpacity: 0.3
+          });
+          mySpot.setMap(map);
+
+
+
+
+          var marker5 = new google.maps.Marker({
+            position: place5,
+            icon: 'cicon.png',
+            animation: google.maps.Animation.BOUNCE
+          });
+          marker5.setMap(map);
+          var mySpot = new google.maps.Circle({
+            center: place5,
+            radius: 80000,
+            strokeColor: "#FF0000",
+            strokeOpacity: 0.7,
+            strokeWeight: 3,
+            fillColor: "#FF0000",
+            fillOpacity: 0.3
+          });
+          mySpot.setMap(map);
+
+          //google.maps.event.addListener(marker5, 'click', function() {
+          //map.setZoom(20);
+          //map.setCenter(marker5.getPosition());
+          //  location.href = "store1info.html";
+
+          //});
+
+          google.maps.event.addListener(marker, 'click', function() {
+            var infowindow = new google.maps.InfoWindow({
+              content: "2nd Shop(Kang-won-do)",
+              size: new google.maps.Size(50, 50)
+            })
+            infowindow.open(map, marker);
+          });
+          google.maps.event.addListener(marker3, 'click', function() {
+            var infowindow = new google.maps.InfoWindow({
+              content: "5th Shop(Dae-gu)",
+              size: new google.maps.Size(50, 50)
+            })
+            infowindow.open(map, marker3);
+          });
+          google.maps.event.addListener(marker2, 'click', function() {
+            var infowindow = new google.maps.InfoWindow({
+              content: "4th Shop(Gwang-ju)",
+              size: new google.maps.Size(50, 50)
+            })
+            infowindow.open(map, marker2);
+          });
+          google.maps.event.addListener(marker4, 'click', function() {
+            var infowindow = new google.maps.InfoWindow({
+              content: "3th Shop(Dae-jeon)",
+              size: new google.maps.Size(50, 50)
+            })
+            infowindow.open(map, marker4);
+          });
+          google.maps.event.addListener(marker5, 'click', function() {
+            var infowindow = new google.maps.InfoWindow({
+              content: "1st Shop(Seoul)",
+              size: new google.maps.Size(50, 50)
+            })
+            infowindow.open(map, marker5);
+          });
+
+        }
+      </script>
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAlOjojzJqN5CEy7iGWtTTiWgCMiPUhXI&callback=myMap"></script>
+
+
+
+
+
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>

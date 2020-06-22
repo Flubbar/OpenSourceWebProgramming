@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <style>
+    * {
+      font-family: 'Raleway', sans-serif;
+    }
+
+    a:link {
+      text-decoration: none;
+      color:#000000;
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    a:active {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    .LoginBody {
+      background: url(img/imax.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    .LoginBody .LoginDiv {
+      //border: 1px solid black;
+      opacity: 0.95;
+      margin-left: 42%;
+      margin-top: 5%;
+      width: 250px;
+      height: 700px;
+    }
+
+    .LoginBody .Logo {
+      width: 200px;
+      margin-top: 40px;
+      margin-left: 25px;
+    }
+
+    .LoginBody h1 {
+      color: #000000;
+      text-align: center;
+      font-size: 25px;
+      font-weight: 100;
+    }
+
+    .LoginBody .InputField {
+      text-align: center;
+      display: block;
+      width: 100%;
+      height: 45px;
+
+      font-size: 16px;
+      color: #000000;
+      line-height: 1.2;
+
+      background: transparent;
+      outline: none;
+      border: none;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.24);
+    }
+
+    .LoginBody .InputField:focus {
+      border-bottom: 2px solid #f53b57;
+    }
+
+    .LoginBody .SubmitBtn {
+      outline: none;
+      border: none;
+      color: #000000;
+      font-weight: 1000;
+      background-color: #0be881;
+      width: 100%;
+      height: 40px;
+    }
+
+    .LoginBody .SubmitBtn:hover {
+      background-color: #0abb69;
+    }
+
+    .ErrorFlag {
+      text-align: center;
+      color: #000000;
+      font-size: 12px;
+    }
+    #IdField{
+      color: #000000
+    }
+    #PwField{
+      color: #000000
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="style1.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Cafe</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    /* Jquery Code
+                //KuBonCheol
+                var id = "admin";
+                var pw = "admin";
+                $(".SubmitBtn").click(function(){
+                    event.preventDefault();
+                    if($("#IdField").val()== id && $("#PwField").val()== pw){
+                            $(location).attr('href',"reservation.html");
+                    }else{
+                        $(".ErrorFlag").text("incorrect Username or Password");
+                        $(".ErrorFlag").css("background-color","#f53b57");
+                    }
+                });
+                });
+                */
+
+    // Available ID/PW
+    var id = "admin";
+    var pw = "admin";
+
+    function signin() {
+      event.preventDefault();
+      var inputid = document.getElementById("IdField").value;
+      var inputpw = document.getElementById("PwField").value;
+      if (inputid == id && inputpw == pw) {
+        location.href = "mainP.html";
+      } else {
+        document.getElementById("ErrorFlag").innerHTML = "incorrect Username or Password";
+        document.getElementById("ErrorFlag").style.backgroundColor = "#f53b57";
+      }
+    }
+  </script>
+</head>
+
+<body class="LoginBody">
+  <div class="LoginDiv">
+    <img class="Logo" src="img/cup.png">
+    <h1>Cafe</h1>
+    <form>
+      <p class="ErrorFlag" id="ErrorFlag"></p>
+      <input type="text" class="InputField" id="IdField" placeholder="USERNAME"><br>
+      <input type="password" class="InputField" id="PwField" placeholder="PASSWORD"><br>
+      <button class="SubmitBtn" onclick="signin()">Sign-in</button>
+    </form>
+  </div>
+</body>
+
+</html>

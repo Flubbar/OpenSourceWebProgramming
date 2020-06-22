@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link herf="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    @font-face {
+      font-family: "cfont";
+      src: url(cafefont.ttf);
+      font-style: normal;
+      font-weight: normal;
+    }
+
+    body {
+      font-family: cfont;
+    }
+
+    .carousel {
+      z-index: -99;
+    }
+
+    /* keeps this behind all content */
+    .carousel .item {
+      position: fixed;
+      opacity: 0;
+      left: 0 !important;
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel .one {
+      background: url('img/front.jpg');
+      background-size: cover;
+      -moz-background-size: cover;
+    }
+
+    .carousel .two {
+      background: url('img/front2.jpg');
+      background-size: cover;
+      -moz-background-size: cover;
+    }
+
+    .carousel .three {
+      background: url('img/cafemain.jpg');
+      background-size: cover;
+      -moz-background-size: cover;
+    }
+
+    .carousel .active {
+      opacity: 1 !important;
+    }
+
+    .carousel .left {
+      opacity: 1 !important;
+
+    }
+
+    .mungu {
+      background-color: rgba(255, 255, 255, 0.75);
+      text-align: center;
+      font-family: cfont;
+      font-size: 60px;
+      margin: 400px;
+      color: #000000;
+      z-index: 100;
+    }
+
+    .navbar {
+      margin-top: 100px;
+      background-color: #F2E3D5;
+      color: #734C29;
+
+    }
+
+    li {
+      padding-right: 30px;
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+      $('.carousel').carousel({
+        interval: 5000
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div id="myCarousel" class="carousel slide text-center" data-interval="5000" data-ride="carousel">
+<div class="container-fluid text-center">
+    <div class="carousel-inner">
+      <div class="active item one">
+        <h1 class="mungu">A sound mind in a sound body.</h1>
+      </div>
+      <div class="item two">
+        <h1 class="mungu">Happiness lies first of all in health.</h1>
+      </div>
+      <div class="item three">
+        <h1 class="mungu">The first property is the health.</h1>
+      </div>
+    </div>
+</div>
+
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div><img src="img/llogo.png" style="float:left; display:inline; margin-left:30px;margin-top:7px;margin-bottom:7px;"></div>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right" style="margin-right: 20px; font-size:22px;">
+          <li><a href="Intro.html">Intoduction</a></li>
+          <li><a href="Howtouse.html">How To Use</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="foodconsumption.html">Trends</a></li>
+          <li><a href="Coffee_Ingredient.html">Contents Info</a></li>
+          <li><a href="Random.html">Random</a></li>
+        </ul>
+    </nav>
+
+
+
+
+  </div>
+</body>
+
+</html>

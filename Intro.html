@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <title>Introduction</title>
+  <script>
+    // When Page Loaded
+    //document.addEventListener("DOMContentLoaded", function(){
+    //  document.getElementById("IdText").innerHTML = "<b>admin</b>";
+    //  });
+  </script>
+
+  <style>
+    @FONT-FACE {
+      font-family: 'cfont';
+      src: url("cafefont.ttf");
+    }
+
+    .IntroBody {
+      font-family: cfont;
+      background-color: #FFF2E6;
+    }
+
+    .IntroBody .Contents {
+      font-family: cfont;
+      background: rgb(30, 39, 46);
+      /* Fallback for older browsers without RGBA-support */
+      height: 100%;
+      width: 80%-120px;
+      margin-left: 0px;
+      padding: 30px 30px 30px 30px;
+      color: white;
+      min-width: 800px;
+
+    }
+
+    .IntroBody .Contents .ImgBox h1 {
+      font-family: cfont;
+      font-size: 80px;
+      margin: 4px;
+      display: float;
+      float: bottom;
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      background-color: rgba(255, 255, 255, 0.24);
+    }
+
+    .IntroBody .Contents .ImgBox p {
+      font-family: cfont;
+      font-size: 15px;
+      margin: 4px;
+      display: float;
+      float: bottom;
+      position: absolute;
+      bottom: 10px;
+      right: 35px;
+      background-color: rgba(255, 255, 255, 0.24);
+    }
+
+    .IntroBody .Contents .ImgBox {
+      position: relative;
+      width: 100%;
+      height: 750px;
+      background: url(img/imax2.jpg) no-repeat center center fixed;
+      filter: alpha(opacity=70);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    #AboutUsImg {
+      height: 550px;
+      background: url(img/front.jpg) no-repeat center center fixed;
+      filter: alpha(opacity=70);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      margin-top: 25px;
+
+    }
+
+    #AboutUsBox {
+      height: 1000px;
+      background-color: #485460;
+      width: 100%;
+      text-align: left;
+      font-size: 28px;
+      padding-top: 20px;
+      padding-left: 20px;
+    }
+
+    #AboutUsBox h2 {
+      padding-top: 20px;
+      font-size: 65px;
+    }
+
+    .navbar {
+      margin-top: 0px;
+      background-color: #F2E3D5;
+      color: #734C29;
+
+    }
+
+    li {
+      padding-right: 30px;
+    }
+
+    @FONT-FACE {
+      font-family: 'cafefont';
+      src: url("cafefont.ttf");
+    }
+
+    #kimg {
+      position: fixed;
+      right: 25px;
+      bottom: 40px;
+      z-index: 100;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body class="IntroBody">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div><img src="img/llogo.png" style="float:left; display:inline; margin-left:30px;margin-top:7px;margin-bottom:7px;"></div>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right" style="margin-right: 20px; font-size:22px;">
+        <li><a href="Intro.html">Intoduction</a></li>
+        <li><a href="Howtouse.html">How To Use</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="foodconsumption.html">Trends</a></li>
+        <li><a href="Coffee_Ingredient.html">Contents Info</a></li>
+        <li><a href="Random.html">Random</a></li>
+      </ul>
+  </nav>
+
+
+  <div class="Contents">
+    <div class="ImgBox" id="AboutUsImg">
+      <h1>Introduction</h1><br>
+      <p>The best choice for your health</p>
+    </div><br>
+    <div class="SelectBox" Id="AboutUsBox">
+      <h2>Cafe Boom</h2>
+      Modern people unconsciously consume too much caffeine,salt,sugar,calorie.<br>
+      One of the reasons is that there are so many cafes in Korea.<br>
+      So Cafe is boom in Korean Society.<br>
+      <h2>Smart choice for your health</h2>
+      In this situation, a healthy body will make a healthy mental state.<br>
+      A healthy body is that important.<br>
+      so, consumers should spend healthy and smart<br>
+      We made a website to help this.<br>
+      The difference from other web sites is that our web site visually shows the amount of caffeine,salt,sugar,calorie in all menus, as well as ordering reservations.<br>
+      Also, Our Web site calculates you total amounts of sugar, salt, caffeine, and calorie, respectively. <br>It shows you the percentage compared to daily recommended intake,
+      which pops up warning message if it goes above 100%.<br>
+      So you can control your intake to not exceed daily recommended amount.<br>
+      We expect you to be a smart consumer for good health.<br>
+    </div>
+
+  </div>
+  <img id="kimg" src="img/kakao.png" width="185px" height="200px" alt="imgimg">
+</body>
+
+</html>

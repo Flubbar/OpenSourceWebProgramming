@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <title>How to use</title>
+  <script>
+    // When Page Loaded
+    //document.addEventListener("DOMContentLoaded", function(){
+    //  document.getElementById("IdText").innerHTML = "<b>admin</b>";
+    //  });
+  </script>
+
+  <style>
+    @FONT-FACE {
+      font-family: 'cfont';
+      src: url("cafefont.ttf");
+    }
+    body{
+      font-family: cfont;
+    }
+
+    .IntroBody {
+      background-color: #FFF2E6;
+    }
+
+    .IntroBody .Contents {
+      background: rgb(30, 39, 46);
+      /* Fallback for older browsers without RGBA-support */
+      background: rgba(30, 39, 46, 0.9);
+      height: 100%;
+      width: 100%-120px;
+      margin-left: 0px;
+      padding: 30px 30px 30px 30px;
+      color: white;
+      min-width: 800px;
+    }
+
+    .IntroBody .Contents .ImgBox h1 {
+      font-size: 80px;
+      margin: 4px;
+      display: float;
+      float: bottom;
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      background-color: rgba(255, 255, 255, 0.24);
+    }
+
+    .IntroBody .Contents .ImgBox p {
+      font-size: 15px;
+      margin: 4px;
+      display: float;
+      float: bottom;
+      position: absolute;
+      bottom: 10px;
+      right: 35px;
+      background-color: rgba(255, 255, 255, 0.24);
+    }
+
+    .IntroBody .Contents .ImgBox {
+      position: relative;
+      width: 100%;
+      height: 750px;
+      background: url(img/imax2.jpg) no-repeat center center fixed;
+      filter: alpha(opacity=70);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    #AboutUsImg {
+      height: 550px;
+      background: url(img/front.jpg) no-repeat center center fixed;
+      filter: alpha(opacity=70);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    #AboutUsBox {
+      height: 1000px;
+      background-color: #485460;
+      width: 100%;
+      text-align: left;
+      font-size: 28px;
+      padding-top: 20px;
+      padding-left: 20px;
+    }
+
+    #AboutUsBox h2 {
+      padding-top: 20px;
+      font-size: 65px;
+    }
+
+    .navbar {
+      margin-top: 0px;
+      background-color: #F2E3D5;
+      color: #734C29;
+
+    }
+
+    li {
+      padding-right: 30px;
+    }
+
+    @FONT-FACE {
+      font-family: 'cafefont';
+      src: url("cafefont.ttf");
+    }
+  </style>
+</head>
+
+<body class="IntroBody">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div><img src="img/llogo.png" style="float:left; display:inline; margin-left:30px;margin-top:7px;margin-bottom:7px;"></div>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right" style="margin-right: 20px; font-size:22px;">
+        <li><a href="Intro.html">Intoduction</a></li>
+        <li><a href="Howtouse.html">How To Use</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="foodconsumption.html">Trends</a></li>
+        <li><a href="Coffee_Ingredient.html">Contents Info</a></li>
+        <li><a href="Random.html">Random</a></li>
+      </ul>
+  </nav>
+
+
+
+  <div class="Contents">
+    <div class="ImgBox" id="AboutUsImg">
+      <h1>How to use</h1><br>
+      <p>It's pretty simple</p>
+    </div><br>
+    <div class="SelectBox" Id="AboutUsBox">
+      <h2>How to use</h2>
+      1. Look at the menu and put what you want.<br>
+      2. Enter the quantity for the selected menu.<br>
+      3. Check the total amount of caffeine,salt,sugar,calorie that you want to order.<br>
+      4. If you want to pre-order, click the button.<br>
+
+
+    </div>
+  </div>
+</body>
+
+</html>

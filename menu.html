@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Menu</title>
+  <!--<script src="//code.jquery.com/jquery-1.10.2.js"></script>-->
+  <script language="javascript" type="text/javascript" src="menu.js"></script>
+  <script>
+    window.onload = function() {
+      var orderArray = new Array();
+
+      function drawMenu(coffee) {
+        var menuBoard = document.createElement('div');
+        menuBoard.className = "menuBoard";
+        menuBoard.id = "img" + coffee.id;
+        menuBoard.backgroundColor = "#000000";
+
+        var image = document.createElement('img');
+        image.src = "img/menu/" + coffee.name + ".png";
+        image.className = "menuImage";
+        image.style.float = "left";
+
+        var name = document.createElement('h1');
+        name.innerHTML = coffee.name;
+
+        var desc = document.createElement('p');
+        desc.innerHTML = coffee.desc;
+
+        var price = document.createElement('p');
+        price.innerHTML = "Price : " + coffee.price + "$";
+        price.style.fontSize = "20px";
+
+        var contents = document.createElement('table');
+
+        for (var i = 0; i < 5; i++) {
+          var tr = document.createElement('tr');
+          var contentTd = document.createElement('td');
+          contentTd.innerHTML = contentName[i];
+          tr.appendChild(contentTd);
+
+          var amountTd = document.createElement('td');
+          amountTd.id = "content" + coffee.id + "-" + i;
+          amountTd.innerHTML = coffee.contents[i];
+          var percentage = Math.ceil(coffee.contents[i] / recommend[i] * 100);
+          if (percentage == 0) {
+            amountTd.style.backgroundColor = "darkgoldenrod";
+          } else {
+            amountTd.style.backgroundImage = "linear-gradient(to right, sienna " + percentage + "%, darkgoldenrod " + percentage + "%,darkgoldenrod " + (100 - percentage) + "%)";
+          }
+          amountTd.innerHTML = coffee.contents[i] + "(" + percentage + "%)";
+          tr.appendChild(amountTd);
+
+          contents.appendChild(tr);
+        }
+
+        function handleChange(checkbox) {
+          var target;
+          if (checkbox.id == coffee.id + "deCaf") {
+            target = 4;
+          } else {
+            target = 3;
+          }
+          var change = document.getElementById("content" + coffee.id + "-" + target);
+          var newPercentage;
+          if (checkbox.checked == true) {
+            change.style.color = "skyblue";
+            newPercentage = Math.ceil(coffee.contents[target] / recommend[target] * 50);
+            change.innerHTML = coffee.contents[target] / 2 + "(" + newPercentage + "%)";
+          } else {
+            change.style.color = "white";
+            newPercentage = Math.ceil(coffee.contents[target] / recommend[target] * 100);
+            change.innerHTML = coffee.contents[target] + "(" + newPercentage + "%)";
+          }
+          if (newPercentage == 0) {
+            change.style.backgroundColor = "darkgoldenrod";
+          } else {
+            change.style.backgroundImage = "linear-gradient(to right, sienna " + newPercentage + "%, darkgoldenrod " + newPercentage + "%,darkgoldenrod " + (100 - percentage) + "%)";
+          }
+        };
+
+        function getCoffeeContents(coffee) {
+          var deCaf = document.getElementById(coffee.id + "deCaf");
+          var lowSugar = document.getElementById(coffee.id + "lowSugar");
+          if (deCaf.checked == true) {
+            coffee.contents[4] /= 2;
+            coffee.modifier += 1;
+          }
+          if (lowSugar.checked == true) {
+            coffee.contents[3] /= 2;
+            coffee.modifier += 2;
+          }
+          if (!sessionStorage.order_coffee_List) {
+            console.log("reset");
+            sessionStorage.order_coffee_List = "[]";
+          }
+          console.log(sessionStorage);
+          orderArray = JSON.parse(sessionStorage.order_coffee_List);
+          orderArray.push(coffee);
+          sessionStorage.order_coffee_List = JSON.stringify(orderArray);
+          console.log(sessionStorage.order_coffee_List);
+          if (confirm("Succesfully added to your order list! Go to order page?")) {
+            window.location.href = "order.html";
+          }
+        }
+
+        var deCaf = document.createElement('input');
+        if (coffee.contents[4] == 0) {
+          deCaf.disabled = "disabled";
+        }
+        deCaf.type = "checkbox";
+        deCaf.id = coffee.id + "deCaf";
+        deCaf.onchange = function() {
+          handleChange(deCaf);
+        }
+        var deCafLabel = document.createElement('label');
+        deCafLabel.for = coffee.id + "deCaf";
+        deCafLabel.innerHTML = "De-Caffeine";
+
+        var lowSugar = document.createElement('input');
+        if (coffee.contents[3] == 0) {
+          lowSugar.disabled = "disabled";
+        }
+        lowSugar.type = "checkbox";
+        lowSugar.id = coffee.id + "lowSugar";
+        lowSugar.onchange = function() {
+          handleChange(lowSugar);
+        }
+        var lowSugarLabel = document.createElement('label');
+        lowSugarLabel.for = coffee.id + "lowSugar";
+        lowSugarLabel.innerHTML = "Low-Sugar";
+
+        var orderBtn = document.createElement('input');
+        orderBtn.type = "button";
+        orderBtn.id = "orderBtn";
+        orderBtn.value = "Order";
+        orderBtn.onclick = function() {
+          getCoffeeContents(coffee);
+
+        }
+
+        menuBoard.appendChild(image);
+        menuBoard.appendChild(name);
+        menuBoard.appendChild(desc);
+        menuBoard.appendChild(contents);
+        menuBoard.appendChild(price);
+        menuBoard.appendChild(deCaf);
+        menuBoard.appendChild(deCafLabel);
+        menuBoard.appendChild(lowSugar);
+        menuBoard.appendChild(lowSugarLabel);
+        menuBoard.appendChild(orderBtn);
+        document.getElementById("menuBox").appendChild(menuBoard);
+      }
+      cafeMenu.forEach((coffee) => {
+        drawMenu(coffee);
+      });
+    }
+  </script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body class="IntroBody">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div><img src="img/llogo.png" style="float:left; display:inline; margin-left:30px;margin-top:7px;margin-bottom:7px;"></div>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right" style="margin-right: 20px; font-size:22px;">
+        <li><a href="Intro.html">Intoduction</a></li>
+        <li><a href="Howtouse.html">How To Use</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="foodconsumption.html">Trends</a></li>
+        <li><a href="Coffee_Ingredient.html">Contents Info</a></li>
+        <li><a href="Random.html">Random</a></li>
+      </ul>
+  </nav>
+
+
+
+  <div class="Contents" height="">
+    <div class="ImgBox" id="AboutUsImg">
+      <h1>Menu</h1><br>
+      <p>Choose your preference</p>
+    </div><br>
+    <div class="SelectBox" Id="menuBox">
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+
+@FONT-FACE {
+    font-family: 'cfont';
+    src: url("cafefont.ttf");
+}
+
+body {
+    font-family: cfont;
+}
+
+.IntroBody {
+    background-color: #FFF2E6;
+}
+
+    .IntroBody .Contents {
+        background: rgb(30, 39, 46);
+        /* Fallback for older browsers without RGBA-support */
+        background: rgba(30, 39, 46, 0.9);
+        height: 100%;
+        width: 100%-120px;
+        margin-left: 0px;
+        padding: 30px 30px 30px 30px;
+        color: white;
+        min-width: 800px;
+    }
+
+        .IntroBody .Contents .ImgBox h1 {
+            font-size: 80px;
+            margin: 4px;
+            display: float;
+            float: bottom;
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background-color: rgba(255, 255, 255, 0.24);
+        }
+
+        .IntroBody .Contents .ImgBox p {
+            font-size: 15px;
+            margin: 4px;
+            display: float;
+            float: bottom;
+            position: absolute;
+            bottom: 10px;
+            right: 35px;
+            background-color: rgba(255, 255, 255, 0.24);
+        }
+
+        .IntroBody .Contents .ImgBox {
+            position: relative;
+            width: 100%;
+            height: 750px;
+            background: url(img/imax2.jpg) no-repeat center center fixed;
+            filter: alpha(opacity=70);
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+#AboutUsImg {
+    height: 550px;
+    background: url(img/front.jpg) no-repeat center center fixed;
+    filter: alpha(opacity=70);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#AboutUsBox {
+    height: 1000px;
+    background-color: #485460;
+    width: 100%;
+    text-align: left;
+    font-size: 28px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+    #AboutUsBox h2 {
+        padding-top: 20px;
+        font-size: 65px;
+    }
+
+.navbar {
+    margin-top: 0px;
+    background-color: #F2E3D5;
+    color: #734C29;
+}
+
+li {
+    padding-right: 30px;
+}
+  #kimg {
+    position: fixed;
+    right: 25px;
+    bottom: 40px;
+    z-index: 100;
+    opacity: 0.8;
+  }
+  .menuBoard{
+    border-radius: 30px;
+    width: 100%;
+    height: 320px;
+    background-color: #485430;
+    margin: 20px 0px;
+  }
+  #menuBox{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 5%;
+  }
+  .menuImage{
+    border-radius: 30px;
+    height:320px;
+  }
+  input[type = "checkbox"]{
+    -webkit-transform: scale(2);
+    width:30px;
+  }
+  .menuBoard table{
+    border-width: 10px;
+    margin: 10px;
+    width: calc(100%-350px);
+    text-align: center;
+  }
+  h1{
+    text-transform: capitalize;
+  }
+  .menuBoard table tr td:nth-of-type(1){
+    min-width:100px;
+    width: 300px;
+  }
+  .menuBoard table tr td:nth-of-type(2)
+  {
+    border-radius: 10px;
+    width: 80%;
+    transition: 300ms;
+  }
+#orderBtn{
+  border: 2px solid green;
+  margin: 10px;
+  font-family: 'cfont';
+  border-radius: 10px;
+  font-size: 20px;
+  width:100px;
+  height:50px;
+  background-color:lime;
+  transition: 500ms;
+}
+#orderBtn:hover{
+  background-color:white;
+  color: green;
+}
+
+#cancelBtn{
+  border: 2px solid white;
+  margin: 10px;
+  font-family: 'cfont';
+  border-radius: 10px;
+  font-size: 20px;
+  width:100px;
+  height:50px;
+  background-color:orange;
+  transition: 500ms;
+}
+#cancelBtn:hover{
+  background-color:white;
+  color: orange;
+}
+
+.DeliveryBox{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 5%;
+}
