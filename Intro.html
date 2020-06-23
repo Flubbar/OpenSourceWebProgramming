@@ -29,8 +29,6 @@
 
     .IntroBody .Contents {
       font-family: cfont;
-      background: rgb(30, 39, 46);
-      /* Fallback for older browsers without RGBA-support */
       height: 100%;
       width: 80%-120px;
       margin-left: 0px;
@@ -49,7 +47,6 @@
       position: absolute;
       bottom: 30px;
       right: 30px;
-      background-color: rgba(255, 255, 255, 0.24);
     }
 
     .IntroBody .Contents .ImgBox p {
@@ -61,14 +58,12 @@
       position: absolute;
       bottom: 10px;
       right: 35px;
-      background-color: rgba(255, 255, 255, 0.24);
     }
 
     .IntroBody .Contents .ImgBox {
       position: relative;
       width: 100%;
       height: 750px;
-      background: url(img/imax2.jpg) no-repeat center center fixed;
       filter: alpha(opacity=70);
       -webkit-background-size: cover;
       -moz-background-size: cover;
@@ -78,7 +73,7 @@
 
     #AboutUsImg {
       height: 550px;
-      background: url(img/front.jpg) no-repeat center center fixed;
+      background: url(img/cintro.jpg) no-repeat center center fixed;
       filter: alpha(opacity=70);
       -webkit-background-size: cover;
       -moz-background-size: cover;
@@ -89,8 +84,9 @@
     }
 
     #AboutUsBox {
-      height: 1000px;
-      background-color: #485460;
+      height: 100%;
+      overflow: hidden;
+      background-color: #ffffff;
       width: 100%;
       text-align: left;
       font-size: 28px;
@@ -126,6 +122,13 @@
       z-index: 100;
       opacity: 0.8;
     }
+    .p1 .p2 .p3 .p4{
+      display: inline;
+      float: left;
+      width: 50%;
+      height: auto;
+    }
+
   </style>
 </head>
 
@@ -133,7 +136,10 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <nav class="navbar navbar-default navbar-fixed-top">
-    <div><img src="img/llogo.png" style="float:left; display:inline; margin-left:30px;margin-top:7px;margin-bottom:7px;"></div>
+    <div>
+      <a href="./Main.html">
+      <img src="img/llogo.png" style="float:left; display:inline; margin-left:30px;margin-top:7px;margin-bottom:7px;"></a>
+    </div>
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
@@ -153,16 +159,20 @@
   </nav>
 
 
-  <div class="Contents">
+  <div class="Contents" style="color:black;">
     <div class="ImgBox" id="AboutUsImg">
-      <h1>Introduction</h1><br>
-      <p>The best choice for your health</p>
+      <h1 style="color:#ffffff;">Introduction</h1>
+      <p style="color:#ffffff; margin-top: 30px;">The best choice for your health</p>
     </div><br>
     <div class="SelectBox" Id="AboutUsBox">
+      <div>
+      <div class="p1" style="display: inline; float: left; width:50%;">
       <h2>Cafe Boom</h2>
       Modern people unconsciously consume too much caffeine,salt,sugar,calorie.<br>
       One of the reasons is that there are so many cafes in Korea.<br>
-      So Cafe is boom in Korean Society.<br>
+      So Cafe is boom in Korean Society.<br></div>
+      <img src="img/intro2.jpg" class="p2" style="width:35%; margin-left: 30px;"></div>
+      <div class="p3" style="display: inline; float: right; width:60%; margin-top:70px;">
       <h2>Smart choice for your health</h2>
       In this situation, a healthy body will make a healthy mental state.<br>
       A healthy body is that important.<br>
@@ -173,10 +183,10 @@
       which pops up warning message if it goes above 100%.<br>
       So you can control your intake to not exceed daily recommended amount.<br>
       We expect you to be a smart consumer for good health.<br>
-    </div>
+
+    </div> <div><img src="img/intro3.png" class="p4" style="width:35%; margin-top:140px; margin-right:20px;"></div></div>
 
   </div>
-  <img id="kimg" src="img/kakao.png" width="185px" height="200px" alt="imgimg">
 </body>
 
 </html>

@@ -28,7 +28,7 @@
     }
 
     .LoginBody {
-      background: url(img/imax.jpg) no-repeat center center fixed;
+      background: url(img/Login_image.jpg) no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -36,7 +36,7 @@
     }
 
     .LoginBody .LoginDiv {
-      //border: 1px solid black;
+      /* border: 1px solid black; */
       opacity: 0.95;
       margin-left: 42%;
       margin-top: 5%;
@@ -134,7 +134,7 @@
       var inputid = document.getElementById("IdField").value;
       var inputpw = document.getElementById("PwField").value;
       if (inputid == id && inputpw == pw) {
-        location.href = "mainP.html";
+        location.href = "Main.html";
       } else {
         document.getElementById("ErrorFlag").innerHTML = "incorrect Username or Password";
         document.getElementById("ErrorFlag").style.backgroundColor = "#f53b57";
@@ -149,9 +149,9 @@
     <h1>Cafe</h1>
     <form>
       <p class="ErrorFlag" id="ErrorFlag"></p>
-      <input type="text" class="InputField" id="IdField" placeholder="USERNAME"><br>
+      <input type="text" class="InputField" id="IdField" placeholder="USERNAME" ><br>
       <input type="password" class="InputField" id="PwField" placeholder="PASSWORD"><br>
-      <button class="SubmitBtn" onclick="signin()">Sign-in</button>
+      <button class="SubmitBtn" onclick="signin()" href="Random.html">Sign-in</button>
     </form>
   </div>
 </body>

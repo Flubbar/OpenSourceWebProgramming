@@ -12,6 +12,7 @@
   <script language="javascript" type="text/javascript" src="menu.js"></script>
   <script>
     var showWarning = 0;
+    var totalPrice = 0;
     window.onload = function() {
       function drawMenu(coffee) {
         var menuBoard = document.createElement('div');
@@ -25,11 +26,11 @@
         image.style.float = "left";
 
         var name = document.createElement('h1');
-        if(coffee.modifier == 1){
+        if (coffee.modifier == 1) {
           coffee.name += " (De-Caffeine)"
-        }else if(coffee.modifier == 2){
+        } else if (coffee.modifier == 2) {
           coffee.name += " (Low-Sugar)"
-        }else if(coffee.modifier == 3){
+        } else if (coffee.modifier == 3) {
           coffee.name += " (De-Caf & Low-Sugar)"
         }
         name.innerHTML = coffee.name;
@@ -55,10 +56,10 @@
             amountTd.style.backgroundImage = "linear-gradient(to right, sienna " + percentage + "%, darkgoldenrod " + percentage + "%,darkgoldenrod " + (100 - percentage) + "%)";
           }
           amountTd.innerHTML = coffee.contents[i] + " (" + percentage + "%)";
-          if(i == 3 && coffee.modifier >= 2){
+          if (i == 3 && coffee.modifier >= 2) {
             amountTd.style.color = "skyblue";
           }
-          if(i == 4 && coffee.modifier % 2){
+          if (i == 4 && coffee.modifier % 2) {
             amountTd.style.color = "skyblue";
           }
           tr.appendChild(amountTd);
@@ -69,10 +70,10 @@
         cancelBtn.type = "button";
         cancelBtn.id = "cancelBtn";
         cancelBtn.value = "Remove";
-        cancelBtn.onclick = function(){
+        cancelBtn.onclick = function() {
           var temp = new Array();
           temp = JSON.parse(sessionStorage.order_coffee_List);
-          temp.splice(temp.findIndex(target => target.id === coffee.id),1);
+          temp.splice(temp.findIndex(target => target.id === coffee.id), 1);
           sessionStorage.order_coffee_List = JSON.stringify(temp);
           location.reload();
         }
@@ -91,7 +92,7 @@
       });
       calculateTotal(orderList);
 
-      function calculateTotal(orderList){
+      function calculateTotal(orderList) {
         var header = document.createElement('h1');
         header.innerHTML = "Order Summary";
 
@@ -99,10 +100,10 @@
         header.innerHTML = "Contents total";
 
         var contents = document.createElement('table');
-        var total = [0,0,0,0,0];
-        var totalPrice = 0;
-        orderList.forEach((coffee,i) => {
-          coffee.contents.forEach((nutri,i) => {
+        var total = [0, 0, 0, 0, 0];
+
+        orderList.forEach((coffee, i) => {
+          coffee.contents.forEach((nutri, i) => {
             total[i] += nutri;
           });
           totalPrice += coffee.price;
@@ -121,16 +122,16 @@
           var percentage = Math.ceil(total[i] / recommend[i] * 100);
           if (percentage == 0) {
             amountTd.style.backgroundColor = "darkgoldenrod";
-          } else if (percentage < 100){
+          } else if (percentage < 100) {
             amountTd.style.backgroundImage = "linear-gradient(to right, sienna " + percentage + "%, darkgoldenrod " + percentage + "%,darkgoldenrod " + (100 - percentage) + "%)";
-          } else{
+          } else {
             amountTd.style.backgroundColor = "brown";
           }
-          if (percentage >= 50 && percentage <= 80){
+          if (percentage >= 50 && percentage <= 80) {
             amountTd.style.color = "yellow";
-          }else if(percentage >80 && percentage < 99){
+          } else if (percentage > 80 && percentage < 99) {
             amountTd.style.color = "orange";
-          }else if(percentage >= 100){
+          } else if (percentage >= 100) {
             amountTd.style.color = "red";
             showWarning = 1;
           }
@@ -142,7 +143,7 @@
         }
         var info2 = document.createElement('p');
         info2.style.fontSize = "40px";
-        info2.innerHTML = "Total Price : " + totalPrice +"$";
+        info2.innerHTML = "Total Price : " + totalPrice + "$";
 
         var parent = document.getElementById("totalInfo");
         parent.style.textAlign = "center";
@@ -155,11 +156,20 @@
         parent.appendChild(info2);
       }
     }
-
-
-
   </script>
+  <style>
+    #AboutUsImg {
+      height: 550px;
+      background: url(img/order2.jpg) no-repeat center center fixed;
+      filter: alpha(opacity=70);
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      margin-top: 25px;
 
+    }
+  </style>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -168,7 +178,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <nav class="navbar navbar-default navbar-fixed-top">
-    <div><img src="img/llogo.png" style="float:left; display:inline; margin-left:30px;margin-top:7px;margin-bottom:7px;"></div>
+    <div>
+      <a href="./Main.html">
+        <img src="img/llogo.png" style="float:left; display:inline; margin-left:30px;margin-top:7px;margin-bottom:7px;"></a>
+    </div>
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
@@ -189,8 +202,8 @@
 
 
 
-  <div class="Contents" height="">
-    <div class="ImgBox" id="AboutUsImg">
+  <div class="Contents" style="color:black;">
+    <div class="ImgBox" id="AboutUsImg" style="color:white;">
       <h1>Order</h1><br>
       <p>We'll prepare as soon as possible</p>
     </div><br>
@@ -203,17 +216,15 @@
       <div>
         <h1>Order info input</h1>
       </div>
-      <div class="Contents">
-        <h1>Delivery address : <input type="text" id="delivery" value="Chungbuk, Cheongju-si, Gaesin-dong" style="color: black; width:500px; height:40px; text-align: center;"></h1>
-        <div>
-          <p style="font-size: 30px;">Payment Method</p>
+      <div class="Contents" style="text-align: center;color:black;">
+        <h1>Delivery address : <input type="text" id="delivery" value=" Chungbuk-do, Heungdeok-gu, S4-1-dong in Gaeksin-ro" style="color: black; width:60%; height:40px; text-align: center; font-size: 28px;"></h1>
+        <div id="Payment_method">
+          <p style="font-size: 30px;margin-top:30px;">Payment Method</p>
           <input type="checkbox" name="checkbox1" id="ch1" value="Bank Transfer" onclick="oneCheckbox(this)">Bank Transfer
           <input type="checkbox" name="checkbox1" id="ch2" value="Credit card" onclick="oneCheckbox(this)">Credit card
-        </div>
-
-        <div>
           <input type="button" id="orderBtn" value="Order" onclick="Success_order()">
         </div>
+
       </div>
       <script>
         var chk1 = document.getElementById("ch1");
@@ -227,17 +238,25 @@
             }
           }
         }
+        var Array_Order = "";
+        for (var i = 0; i < JSON.parse(sessionStorage.order_coffee_List).length; i++) {
+          Array_Order += JSON.parse(sessionStorage.order_coffee_List)[i].name + "\n                   ";
+        }
         var Delivery_Place;
         var Payment_method;
         //document.getElementById("price").innerHTML = order_coffee.desc;
 
         function Success_order() {
-          if (showWarning == 0 ||(showWarning == 1 && confirm("There's a content that exceeds daliy recommended intake! Order anyway?"))) {
-            Delivery_Place = document.getElementById("delivery").value;
-            if (chk1.checked == true) {
-              alert('\nDelivery Place : ' + Delivery_Place + '\nPayment 방법 : Bank Transfer');
+          Delivery_Place = document.getElementById("delivery").value;
+          if (showWarning == 0 || (showWarning == 1 && confirm("There's a content that exceeds daliy recommended intake! Order anyway?"))) {
+            if (Array_Order == "") {
+              alert("Please select menu");
             } else {
-              alert('\nDelivery Place : ' + Delivery_Place + '\nPayment 방법 : Credit card');
+              if (chk1.checked == true) {
+                alert('Order Coffee : ' + Array_Order + '\nTotalPrice : ' + totalPrice + '$\nDelivery Place : ' + Delivery_Place + '\nPayment 방법 : Bank Transfer');
+              } else if ((chk2.checked == true)) {
+                alert('Order Coffee : ' + Array_Order + '\nTotalPrice : ' + totalPrice + '$\nDelivery Place : ' + Delivery_Place + '\nPayment 방법 : Credit Card');
+              }
             }
           }
         }

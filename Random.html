@@ -40,9 +40,6 @@
     }
 
     .IntroBody .Contents {
-      background: rgb(30, 39, 46);
-      /* Fallback for older browsers without RGBA-support */
-      background: rgba(30, 39, 46, 0.9);
       height: 100%;
       width: 100%-120px;
       margin-left: 0px;
@@ -59,7 +56,6 @@
       position: absolute;
       bottom: 30px;
       right: 30px;
-      background-color: rgba(255, 255, 255, 0.24);
       color: white;
     }
 
@@ -71,7 +67,6 @@
       position: absolute;
       bottom: 10px;
       right: 35px;
-      background-color: rgba(255, 255, 255, 0.24);
       color: white;
       text-align: center;
     }
@@ -80,7 +75,6 @@
       position: relative;
       width: 100%;
       height: 750px;
-      background: url(img/imax2.jpg) no-repeat center center fixed;
       filter: alpha(opacity=70);
       -webkit-background-size: cover;
       -moz-background-size: cover;
@@ -90,7 +84,7 @@
 
     #AboutUsImg {
       height: 550px;
-      background: url(img/front.jpg) no-repeat center center fixed;
+      background: url(img/rrandom.jpg) no-repeat center center fixed;
       filter: alpha(opacity=70);
       -webkit-background-size: cover;
       -moz-background-size: cover;
@@ -117,13 +111,29 @@
         margin-top: 500px;
     }
 
-
+    #ranBtn{
+        border-radius: 20px;
+        background-color: black;
+        color: white;
+        margin: 10px;
+        width:150px;
+        height:50px;
+        font-family: 'cfont';
+    }
+    #ranBtn:hover{
+      border-radius: 20px;
+      background-color:white;
+      color: black;
+    }
 </style>
 </head>
 <body class="IntroBody">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <nav class="navbar navbar-default navbar-fixed-top">
-    <div><img src="img/llogo.png" style="float:left; display:inline; margin-left:30px;margin-top:7px;margin-bottom:7px;"></div>
+    <div>
+      <a href="./Main.html">
+      <img src="img/llogo.png" style="float:left; display:inline; margin-left:30px;margin-top:7px;margin-bottom:7px;"></a>
+    </div>
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
@@ -153,13 +163,16 @@
       <br>
   <div id="Piecontainer" style="width: 550px; height: 400px; margin: 0 auto">
 
-    <img src= "img\logo.png" id="introImg" width="300px" height="300px">
+    <img src= "img\Random.jpg" id="introImg" width="600px" height="600px">
     <br><br>
-    <div class="Button">
+    <div class="Button" style="text-align: center;">
         <input type="button" id="ranBtn" value="S T A R T !" onclick="startRandom()"/>
         <input type="button" id="ranBtn" value="S T O P !" onclick="stopRndom()"/>
         <br>
-        <p >Today's Coffee! = <p id="Selected_coffee"></p></p>
+        <br>
+        <p style="display: inline; ">Which would you choose? = </p>
+        <u><b style="font-size: 60px;"><p style="display: inline; " id="Selected_coffee" ></p></b></u>
+
 
     </div>
 

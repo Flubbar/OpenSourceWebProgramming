@@ -11,11 +11,7 @@ body {
 .IntroBody {
     background-color: #FFF2E6;
 }
-
     .IntroBody .Contents {
-        background: rgb(30, 39, 46);
-        /* Fallback for older browsers without RGBA-support */
-        background: rgba(30, 39, 46, 0.9);
         height: 100%;
         width: 100%-120px;
         margin-left: 0px;
@@ -32,7 +28,6 @@ body {
             position: absolute;
             bottom: 30px;
             right: 30px;
-            background-color: rgba(255, 255, 255, 0.24);
         }
 
         .IntroBody .Contents .ImgBox p {
@@ -43,7 +38,6 @@ body {
             position: absolute;
             bottom: 10px;
             right: 35px;
-            background-color: rgba(255, 255, 255, 0.24);
         }
 
         .IntroBody .Contents .ImgBox {
@@ -58,19 +52,9 @@ body {
             background-size: cover;
         }
 
-#AboutUsImg {
-    height: 550px;
-    background: url(img/front.jpg) no-repeat center center fixed;
-    filter: alpha(opacity=70);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 #AboutUsBox {
     height: 1000px;
-    background-color: #485460;
+    background-color: #ffffff;
     width: 100%;
     text-align: left;
     font-size: 28px;
@@ -103,8 +87,10 @@ li {
     border-radius: 30px;
     width: 100%;
     height: 320px;
-    background-color: #485430;
+/*여기에다가 색깔을 입력하면 원하는 색깔을 입힐 수 있어 >< 너가 원하는 색으로 체인지해~*/
+    background-color: #ffffff;
     margin: 20px 0px;
+   color:black;
   }
   #menuBox{
     display: flex;
@@ -140,23 +126,23 @@ li {
     transition: 300ms;
   }
 #orderBtn{
-  border: 2px solid green;
+  border: 4px solid red;
   margin: 10px;
   font-family: 'cfont';
   border-radius: 10px;
   font-size: 20px;
   width:100px;
   height:50px;
-  background-color:lime;
+  background-color:#e94e77;
   transition: 500ms;
 }
 #orderBtn:hover{
   background-color:white;
-  color: green;
+  color: red;
 }
 
 #cancelBtn{
-  border: 2px solid white;
+  border: 4px solid white;
   margin: 10px;
   font-family: 'cfont';
   border-radius: 10px;
@@ -166,14 +152,19 @@ li {
   background-color:orange;
   transition: 500ms;
 }
-#cancelBtn:hover{
-  background-color:white;
-  color: orange;
-}
+    #cancelBtn:hover {
+        background-color: white;
+        color: orange;
+        border: 4px solid orange;
+    }
 
 .DeliveryBox{
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  padding: 5%;
+  display: block;
+  /* text-align: center; */
+  padding: 30px 30px 30px 30px ;
+  border-radius: 30px;
+  width: 100%;
+  height: 320px;
+  margin: 20px 0px;
+color:black;
 }
